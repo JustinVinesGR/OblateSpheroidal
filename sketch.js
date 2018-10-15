@@ -145,7 +145,9 @@ function setupPlot() {
 
 function updatePlot() {
   //focalDistanceIncrement = (1 / 150) * window.innerWidth;
-  focalDistanceIncrement = 1 / Math.abs(varFocalDistance - window.innerWidth);
+  let focalDistanceLimit = 1.1 * window.innerWidth;
+            
+  focalDistanceIncrement = 1 / math.abs(varFocalDistance - 0.5*focalDistanceLimit);
   
 
   if (leftArrowPressed) {
@@ -157,7 +159,7 @@ function updatePlot() {
     rightArrowPressed = false;
   }
 
-  let focalDistanceLimit = 1.1 * window.innerWidth;
+  //let focalDistanceLimit = 1.1 * window.innerWidth;
   if (math.abs(varFocalDistance) > focalDistanceLimit) {
     varFocalDistance *= -1;
   }
