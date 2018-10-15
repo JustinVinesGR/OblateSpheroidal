@@ -144,7 +144,9 @@ function setupPlot() {
 }
 
 function updatePlot() {
-  focalDistanceIncrement = (1 / 150) * window.innerWidth;
+  //focalDistanceIncrement = (1 / 150) * window.innerWidth;
+  focalDistanceIncrement = 1 / Math.abs(varFocalDistance - window.innerWidth);
+  
 
   if (leftArrowPressed) {
     varFocalDistance -= focalDistanceIncrement;
